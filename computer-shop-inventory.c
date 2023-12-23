@@ -9,10 +9,7 @@ Reva. S
 Adithya Vinayak
 Dashami Perumal
 */
-
+#include <stdio.h>
+#include <string.h>
 
 //main function
-int main()
-{
-    
-}
