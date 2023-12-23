@@ -1,7 +1,8 @@
 //Computer parts shop inventory manager
 //Assignment: 3
 //By: Bit Bandits
-/*Members:
+/*
+Members:
 Abhinav. G
 Nakul. R
 Namitha. N
