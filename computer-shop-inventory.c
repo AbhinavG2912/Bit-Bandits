@@ -30,3 +30,27 @@ void displayMenu() {
     printf("5. Remove quantity of a part\n");
     printf("6. Exit\n");
 }
+// Function to add a computer part to the inventory
+void addPart() {
+    struct ComputerPart part;
+    FILE *file = fopen("inventory.txt", "a");
+
+    if (file == NULL) {
+        printf("Error opening file for writing.\n");
+        return;
+    }
+
+    printf("Enter part name: ");
+    scanf(" %[^\n]", part.name);
+    
+    printf("Enter quantity: ");
+    scanf("%d", &part.quantity);
+    printf("Enter price: ");
+    scanf("%f", &part.price);
+
+    fprintf(file, "%s|%d|%.2f\n", part.name, part.quantity, part.price);
+
+    fclose(file);
+
+    printf("Computer part added successfully!\n");
+}
