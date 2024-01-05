@@ -42,16 +42,12 @@ void addPart() {
 
     printf("Enter part name: ");
     scanf(" %[^\n]", part.name);
-    
     printf("Enter quantity: ");
     scanf("%d", &part.quantity);
     printf("Enter price: ");
     scanf("%f", &part.price);
-
     fprintf(file, "%s|%d|%.2f\n", part.name, part.quantity, part.price);
-
     fclose(file);
-
     printf("Computer part added successfully!\n");
 }
 
