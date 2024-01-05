@@ -13,6 +13,13 @@ Dashami Perumal
 
 #include <stdio.h>
 #include <string.h>
+// Define the structure for computer parts
+struct ComputerPart {
+    char name[50];
+    int quantity;
+    float price;
+};
+
 void displayMenu();
 void addPart();
 void displayInventory();
