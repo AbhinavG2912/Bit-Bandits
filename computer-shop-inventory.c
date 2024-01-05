@@ -12,5 +12,10 @@ Dashami Perumal
 */
 #include <stdio.h>
 #include <string.h>
+void displayMenu();
+void addPart();
+void displayInventory();
+void searchPart();
+void updatePart();
 void removePart();
 //main function
