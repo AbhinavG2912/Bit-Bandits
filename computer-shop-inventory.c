@@ -30,7 +30,7 @@ void displayMenu() {
     printf("5. Remove quantity of a part\n");
     printf("6. Exit\n");
 }
-// Function to add a computer part to the inventory
+// Function to add a computer part to the inventory(by Namitha)
 void addPart() {
     struct ComputerPart part;
     FILE *file = fopen("inventory.txt", "a");
