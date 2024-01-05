@@ -21,3 +21,13 @@ void updatePart();
 void removePart();
 
 //main function
+// Function to display the menu
+void displayMenu() {
+    printf("\n===== Computer Parts Inventory Management System =====\n");
+    printf("1. Add a computer part\n");
+    printf("2. Display inventory\n");
+    printf("3. Search for a computer part\n");
+    printf("4. Update quantity of a part\n");
+    printf("5. Remove quantity of a part\n");
+    printf("6. Exit\n");
+}
