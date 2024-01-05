@@ -27,6 +27,41 @@ void searchPart();
 void updatePart();
 void removePart();
 
+int main() {
+    int choice;
+
+    do {
+        displayMenu();
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+            case 1:
+                addPart();
+                break;
+            case 2:
+                displayInventory();
+                break;
+            case 3:
+                searchPart();
+                break;
+            case 4:
+                updatePart();
+                break;
+            case 5:
+                removePart();
+                break;
+            case 6:
+                printf("Exiting program. Goodbye!\n");
+                break;
+            default:
+                printf("Invalid choice. Please try again.\n");
+        }
+    } while (choice != 6);
+
+    return 0;
+}
+
 // Function to display the menu (by Namitha)
 void displayMenu(){
     printf("\n===== Computer Parts Inventory Management System =====\n");
