@@ -20,7 +20,7 @@ void searchPart();
 void updatePart();
 void removePart();
 
-// Function to display the menu
+// Function to display the menu (by Namitha)
 void displayMenu() {
     printf("\n===== Computer Parts Inventory Management System =====\n");
     printf("1. Add a computer part\n");
