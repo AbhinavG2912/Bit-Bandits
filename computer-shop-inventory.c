@@ -12,5 +12,5 @@ Dashami Perumal
 */
 #include <stdio.h>
 #include <string.h>
-
+void removePart();
 //main function
