@@ -34,12 +34,10 @@ void displayMenu() {
 void addPart() {
     struct ComputerPart part;
     FILE *file = fopen("inventory.txt", "a");
-
-    if (file == NULL) {
+    if (file == NULL){
         printf("Error opening file for writing.\n");
         return;
     }
-
     printf("Enter part name: ");
     scanf(" %[^\n]", part.name);
     printf("Enter quantity: ");
