@@ -39,7 +39,7 @@ int main() {
                 addPart();
                 break;
             case 2:
-                displayInventory();
+                displayMenu();
                 break;
             case 3:
                 searchPart();
