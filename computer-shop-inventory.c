@@ -125,3 +125,18 @@ void removePart() {
     remove("inventory.txt");
     rename("temp_inventory.txt", "inventory.txt");
 }
+/ Function to search for a computer part in the inventory
+void searchPart() {
+    struct ComputerPart part;
+    char searchName[50];
+    int found = 0;
+    FILE *file = fopen("inventory.txt", "r");
+
+    if (file == NULL) {
+        printf("Error opening file for reading.\n");
+        return;
+    }
+
+    printf("Enter the name of the part to search: ");
+    scanf(" %[^\n]", searchName);
+}
