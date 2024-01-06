@@ -140,3 +140,43 @@ void searchPart() {
     printf("Enter the name of the part to search: ");
     scanf(" %[^\n]", searchName);
 }
+// Function to update the quantity of a part in the inventory(reva)
+void updatePart() {
+    struct ComputerPart part;
+    char searchName[50];
+    int newQuantity;
+    int found = 0;
+    FILE *file = fopen("inventory.txt", "r");
+    FILE *tempFile = fopen("temp_inventory.txt", "w");
+
+    if (file == NULL || tempFile == NULL) {
+        printf("Error opening file(s) for reading/writing.\n");
+        return;
+    }
+
+    printf("Enter the name of the part to update quantity: ");
+    scanf(" %[^\n]", searchName);
+    printf("Enter the new quantity: ");
+    scanf("%d", &newQuantity);
+
+    while (fscanf(file, "%[^|]|%d|%f\n", part.name, &part.quantity, &part.price) != EOF) {
+        if (strcmp(part.name, searchName) == 0) {
+            fprintf(tempFile, "%s|%d|%.2f\n", part.name, newQuantity, part.price);
+            found = 1;
+        } else {
+            fprintf(tempFile, "%s|%d|%.2f\n", part.name, part.quantity, part.price);
+        }
+    }
+
+    if (!found) {
+        printf("Part not found in the inventory.\n");
+    } else {
+        printf("Quantity updated successfully!\n");
+    }
+
+    fclose(file);
+    fclose(tempFile);
+
+    remove("inventory.txt");
+    rename("temp_inventory.txt", "inventory.txt");
+}
