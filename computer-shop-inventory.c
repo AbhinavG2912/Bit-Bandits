@@ -22,7 +22,6 @@ struct ComputerPart {
 
 void displayMenu();
 void addPart();
-void displayInventory();
 void searchPart();
 void updatePart();
 void removePart();
