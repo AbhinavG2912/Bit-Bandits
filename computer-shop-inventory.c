@@ -13,7 +13,7 @@ Dashami Perumal
 
 #include <stdio.h>
 #include <string.h>
-// Define the structure for computer parts
+// Define the structure for computer parts(by Nakul)
 struct ComputerPart {
     char name[50];
     int quantity;
