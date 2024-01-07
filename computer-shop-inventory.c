@@ -125,7 +125,7 @@ void removePart() {
     remove("inventory.txt");
     rename("temp_inventory.txt", "inventory.txt");
 }
-/ Function to search for a computer part in the inventory
+// Function to search for a computer part in the inventory by dashami and adithya vinayak
 void searchPart() {
     struct ComputerPart part;
     char searchName[50];
@@ -139,6 +139,22 @@ void searchPart() {
 
     printf("Enter the name of the part to search: ");
     scanf(" %[^\n]", searchName);
+    
+    while (fscanf(file, "%[^|]|%d|%f\n", part.name, &part.quantity, &part.price) != EOF) {
+        if (strcmp(part.name, searchName) == 0) {
+            printf("\n===== Found Part =====\n");
+            printf("%-20s%-10s%-10s\n", "Name", "Quantity", "Price");
+            printf("%-20s%-10d%-10.2f\n", part.name, part.quantity, part.price);
+            found = 1;
+            break;
+        }
+    }
+
+    if (!found) {
+        printf("Part not found in the inventory.\n");
+    }
+
+    fclose(file);
 }
 // Function to update the quantity of a part in the inventory(reva)
 void updatePart() {
