@@ -69,7 +69,7 @@ void displayMenu(){
     printf("2. Display inventory\n");
     printf("3. Search for a computer part\n");
     printf("4. Update quantity of a part\n");
-    printf("5. Remove quantity of a part\n");
+    printf("5. Remove a part\n");
     printf("6. Exit\n");
 }
 // Function to add a computer part to the inventory(by Namitha)
