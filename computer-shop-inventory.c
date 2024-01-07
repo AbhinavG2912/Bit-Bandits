@@ -22,6 +22,7 @@ struct ComputerPart {
 
 void displayMenu();
 void addPart();
+void displayInventory();
 void searchPart();
 void updatePart();
 void removePart();
@@ -39,7 +40,7 @@ int main() {
                 addPart();
                 break;
             case 2:
-                displayMenu();
+                displayInventory();
                 break;
             case 3:
                 searchPart();
@@ -125,7 +126,7 @@ void removePart() {
     remove("inventory.txt");
     rename("temp_inventory.txt", "inventory.txt");
 }
-// Function to search for a computer part in the inventory by dashami and adithya vinayak
+// Function to search for a computer part in the inventory (by Dashami)
 void searchPart() {
     struct ComputerPart part;
     char searchName[50];
@@ -156,6 +157,26 @@ void searchPart() {
 
     fclose(file);
 }
+// Function to display the inventory (By Adithya Vinayak)
+void displayInventory() {
+    struct ComputerPart part;
+    FILE *file = fopen("inventory.txt", "r");
+
+    if (file == NULL) {
+        printf("Error opening file for reading.\n");
+        return;
+    }
+
+    printf("\n===== Inventory =====\n");
+    printf("%-20s%-10s%-10s\n", "Name", "Quantity", "Price");
+
+    while (fscanf(file, "%[^|]|%d|%f\n", part.name, &part.quantity, &part.price) != EOF) {
+        printf("%-20s%-10d%-10.2f\n", part.name, part.quantity, part.price);
+    }
+
+    fclose(file);
+}
+
 // Function to update the quantity of a part in the inventory(reva)
 void updatePart() {
     struct ComputerPart part;
