@@ -139,7 +139,7 @@ void searchPart() {
     }
 
     printf("Enter the name of the part to search: ");
-    scanf(" %[^\n]", searchName);
+    scanf(" %[^\n]", searchName);
     
     while (fscanf(file, "%[^|]|%d|%f\n", part.name, &part.quantity, &part.price) != EOF) {
         if (strcmp(part.name, searchName) == 0) {
